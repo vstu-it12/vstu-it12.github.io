@@ -12,146 +12,162 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
     <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js" defer></script>
 </head>
 
 <body>
+    <!-- Подключение гирлянды -->
+    <div id="girland-container"></div>
+    <script>
+        function loadGirland() {
+            fetch('girland.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Сеть не отвечает: ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('girland-container').innerHTML = data;
+                    const script = document.createElement('script');
+                    script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
+                    script.defer = true;
+                    document.body.appendChild(script);
+                })
+                .catch(error => {
+                    console.error('Ошибка при загрузке girland.html:', error);
+                });
+        }
+        loadGirland();
+    </script>
 
-<!-- Подключение navbar -->
-<div id="navbar-container"></div>
-<!-- Подключение внешнего файла -->
-<script>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-        });
-</script>
-	
-<!-- Подключение модального окна -->
-<div id="modal-container"></div>
-<!-- Подключение внешнего файла -->
-<script>
-    fetch('modal.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('modal-container').innerHTML = data;
-        });
-</script>
+    <!-- Подключение модального окна -->
+	<div id="modal-container" style="margin-top: 95px;"></div>
+	<script>
+		fetch('modal.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('modal-container').innerHTML = data;
+			});
+	</script>
 
-<!-- Header-->
-<header class="py-3">
-    <div class="container px-lg-5">
-        <div class="p-3 p-lg-4 bg-light rounded-3 text-center">
-            <div class="m-3 m-lg-4">
-                <h1 class="display-5 fw-bold">Добро пожаловать на сайт!</h1>
-                <p class="fs-4">Добро пожаловать на сайт группы ИТ-12! Здесь вы сможете найти актуальную информацию о расписании занятий, лабораторных работах, учебных материалах и многом другом. Следите за обновлениями и будьте в курсе всех важных событий!</p>
-                <!-- <a class="btn btn-primary btn-lg" href="#!">Call to action</a> -->
+    <!-- Подключение навигационной панели -->
+    <div id="navbar-container" style="margin-top: 95px;"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <!-- Header-->
+    <header class="py-3">
+        <div class="container px-lg-5">
+            <div class="p-3 p-lg-4 bg-light rounded-3 text-center">
+                <div class="m-3 m-lg-4">
+                    <h1 class="display-5 fw-bold">Добро пожаловать на сайт!</h1>
+                    <p class="fs-4">Добро пожаловать на сайт группы ИТ-12! Здесь вы сможете найти актуальную информацию
+                        о расписании занятий, лабораторных работах, учебных материалах и многом другом. Следите за
+                        обновлениями и будьте в курсе всех важных событий!</p>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-    <!-- Page Content-->
+    </header>
+
     <section class="pt-4">
         <div class="container px-lg-5">
-            <!-- Page Features-->
             <div class="row gx-lg-5">
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
                         class="card bg-light border-0 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"> <i class="bi bi-calendar3"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-calendar3"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">Расписание</h2>
-                            <p class="mb-0 text-dark">
-                            <p class="mb-0 text-dark">Нажмите, чтобы узнать актуальное расписание пар. Здесь вы найдете информацию о
-                                времени и месте проведения занятий, а также сможете следить за возможными изменениями в расписании.</p>
-                            </p>
+                            <p class="mb-0 text-dark">Нажмите, чтобы узнать актуальное расписание пар. Здесь вы найдете
+                                информацию о времени и месте проведения занятий, а также сможете следить за возможными изменениями в расписании.</p>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="/sdo" class="card bg-light border-0 h-100 text-decoration-none card-hover">
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="/sdo.html" class="card bg-light border-0 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
-                                    class="bi bi-card-checklist"></i></div>
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-card-checklist"></i>
+                            </div>
                             <h2 class="fs-4 fw-bold text-dark">SDO</h2>
-                            <p class="mb-0 text-dark">
-                                Нажмите, чтобы просмотреть полный список курсов, доступных в этом семестре. Вы сможете узнать
-                                подробности о каждом курсе и перейти к их содержимому.
-                            </p>
+                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список курсов, доступных в этом семестре. Вы сможете узнать подробности о каждом курсе и перейти к их содержимому.</p>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://it.vstu.by/"
-                        class="card bg-light border-0 h-100 text-decoration-none card-hover">
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="https://it.vstu.by/" class="card bg-light border-0 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
-                                    class="bi bi-card-heading"></i></div>
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-card-heading"></i>
+                            </div>
                             <h2 class="fs-4 fw-bold text-dark">Кафедра ИСиТ</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть сайт Кафедры ИСиТ УО ВГТУ. На сайте можно найти
-                                лабораторные работы, а также такие сервисы как JupyterHub и др. </p>
+                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть сайт Кафедры ИСиТ УО ВГТУ. На сайте можно найти лабораторные работы, а также такие сервисы как JupyterHub и др.</p>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a
-                        href="https://drive.google.com/drive/folders/1YxtTpRt6FeAzoD40pua5MoMyuAre40UO?usp=sharing"
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="https://drive.google.com/drive/folders/1YxtTpRt6FeAzoD40pua5MoMyuAre40UO?usp=sharing"
                         class="card bg-light border-0 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-folder2"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-folder2"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">Лабораторные работы</h2>
-                            <p class="mb-0 text-dark">
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть лабораторные работы, задания и методические материалы
-                                для текущего семестра.</p>
-                            </p>
+                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть лабораторные работы, задания и методические материалы для текущего семестра.</p>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a
-                        href="https://drive.google.com/drive/folders/1r7atjLi-jJ9aekOsyXLa6Jb19alOBAfV?usp=sharing"
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="https://drive.google.com/drive/folders/1r7atjLi-jJ9aekOsyXLa6Jb19alOBAfV?usp=sharing"
                         class="card bg-light border-0 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-folder2"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-folder2"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">Предметы</h2>
-                            <p class="mb-0 text-dark">
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть список предметов и материалы к ним, включая лекции,
-                                задания и дополнительные ресурсы.</p>
-                            </p>
+                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть список предметов и материалы к ним, включая лекции, задания и дополнительные ресурсы.</p>
                         </div>
                     </a>
                 </div>
-<div class="col-lg-6 col-xxl-4 mb-5"> <a
-        href="https://drive.google.com/drive/folders/1gSJtfueT46nT5D-ppCP6uyzYlROxYctD?usp=sharing"
-        class="card bg-light border-0 h-100 text-decoration-none card-hover">
-        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-folder2"></i>
-            </div>
-            <h2 class="fs-4 fw-bold text-dark">Программы</h2>
-            <p class="mb-0 text-dark">
-            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список программ, доступных для установки. Вы
-                сможете загрузить необходимые установочные файлы для их установки.</p>
-            </p>
-        </div>
+
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <a href="https://drive.google.com/drive/folders/1gSJtfueT46nT5D-ppCP6uyzYlROxYctD?usp=sharing"
+                        class="card bg-light border-0 h-100 text-decoration-none card-hover">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
+                                <i class="bi bi-folder2"></i>
+                            </div>
+                            <h2 class="fs-4 fw-bold text-dark">Программы</h2>
+                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список программ, доступных для установки. Вы сможете загрузить необходимые установочные файлы для их установки.</p>
+                        </div>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
+
     <!-- Footer-->
     <footer class="py-3 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright by Vitaliy Andreev</p>
-            <p class="m-0 text-center text-white">vstu-it12.github.io 2024</p>
-        </div>
+            <p class="m-0 text-center text-white">vstu-it12.github.io 2024</p </div>
     </footer>
-    <!-- Bootstrap core JS-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
 </html>
