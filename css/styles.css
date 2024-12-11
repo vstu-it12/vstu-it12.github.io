@@ -10,12 +10,13 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
  .card-hover {
   transition: transform 0.3s ease;
 }
 
 .modal {
-  margin-top: 85px;
+  margin-top: 88px;
 }
 
 .card-hover:hover {
