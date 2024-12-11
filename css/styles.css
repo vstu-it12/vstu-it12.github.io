@@ -11,8 +11,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ .transparent {
+  opacity: 0.8; /* Уровень прозрачности (0.0 - 1.0) */
+ transition: opacity 0.3s; /* Плавный переход при наведении */
+}
+
  .card-hover {
   transition: transform 0.3s ease;
+  opacity: 0.8; /* Уровень прозрачности (0.0 - 1.0) */
 }
 
 .modal {
@@ -20,7 +26,16 @@
 }
 
 .card-hover:hover {
-  transform: scale(1.10);
+  transform: scale(1.05);
+  opacity: 0.90; /* Уровень прозрачности (0.0 - 1.0) */
+}
+
+/* Медиа-запрос для отключения scale на мобильных устройствах */
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: scale(1); /* Отключаем масштабирование для мобильных устройств */
+    opacity: 0.90; /* Оставляем уровень прозрачности */
+  }
 }
 
 :root {
