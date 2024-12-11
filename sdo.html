@@ -14,14 +14,43 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <!-- NewYear -->
-    <style>
-        body {
-            background-image: url('assets/bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    </style>
+	<style>
+		body {
+			background-image: url('assets/bg.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		.transparent {
+			opacity: 0.8;
+			/* Уровень прозрачности (0.0 - 1.0) */
+			transition: opacity 0.3s;
+			/* Плавный переход при наведении */
+		}
+
+		.card-hover {
+			transition: transform 0.3s ease;
+			opacity: 0.8;
+			/* Уровень прозрачности (0.0 - 1.0) */
+		}
+
+		.card-hover:hover {
+			transform: scale(1.05);
+			opacity: 0.90;
+			/* Уровень прозрачности (0.0 - 1.0) */
+		}
+
+		/* Медиа-запрос для отключения scale на мобильных устройствах */
+		@media (max-width: 768px) {
+			.card-hover:hover {
+				transform: scale(1);
+				/* Отключаем масштабирование для мобильных устройств */
+				opacity: 0.90;
+				/* Оставляем уровень прозрачности */
+			}
+		}
+	</style>
     <link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
     <link href="js/snow.min.css" rel="stylesheet">
 </head>

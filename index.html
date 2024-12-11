@@ -2,62 +2,91 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Cайт группы Ит-12</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/icon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-	 <!-- NewYear -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Cайт группы Ит-12</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="assets/icon.ico" />
+	<!-- Bootstrap icons-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="css/styles.css" rel="stylesheet" />
+	<!-- NewYear -->
 	<style>
-        body {
-            background-image: url('assets/bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    </style>
+		body {
+			background-image: url('assets/bg.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		.transparent {
+			opacity: 0.8;
+			/* Уровень прозрачности (0.0 - 1.0) */
+			transition: opacity 0.3s;
+			/* Плавный переход при наведении */
+		}
+
+		.card-hover {
+			transition: transform 0.3s ease;
+			opacity: 0.8;
+			/* Уровень прозрачности (0.0 - 1.0) */
+		}
+
+		.card-hover:hover {
+			transform: scale(1.05);
+			opacity: 0.90;
+			/* Уровень прозрачности (0.0 - 1.0) */
+		}
+
+		/* Медиа-запрос для отключения scale на мобильных устройствах */
+		@media (max-width: 768px) {
+			.card-hover:hover {
+				transform: scale(1);
+				/* Отключаем масштабирование для мобильных устройств */
+				opacity: 0.90;
+				/* Оставляем уровень прозрачности */
+			}
+		}
+	</style>
 	<link href="js/snow.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
+	<link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
 </head>
 
 <body>
-    <script src="js/Snow.min.js"></script>
-    <script>
-        new Snow();
-    </script>
+	<script src="js/Snow.min.js"></script>
+	<script>
+		new Snow();
+	</script>
 
-    <!-- Подключение гирлянды -->
-    <div id="girland-container"></div>
-    <script>
-        function loadGirland() {
-            fetch('girland.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Сеть не отвечает: ' + response.status);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('girland-container').innerHTML = data;
-                    const script = document.createElement('script');
-                    script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
-                    script.defer = true;
-                    document.body.appendChild(script);
-                })
-                .catch(error => {
-                    console.error('Ошибка при загрузке girland.html:', error);
-                });
-        }
-        loadGirland();
-    </script>
+	<!-- Подключение гирлянды -->
+	<div id="girland-container"></div>
+	<script>
+		function loadGirland() {
+			fetch('girland.html')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Сеть не отвечает: ' + response.status);
+					}
+					return response.text();
+				})
+				.then(data => {
+					document.getElementById('girland-container').innerHTML = data;
+					const script = document.createElement('script');
+					script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
+					script.defer = true;
+					document.body.appendChild(script);
+				})
+				.catch(error => {
+					console.error('Ошибка при загрузке girland.html:', error);
+				});
+		}
+		loadGirland();
+	</script>
 
-    <!-- Подключение модального окна -->
+	<!-- Подключение модального окна -->
 	<div id="modal-container" style="margin-top: 95px;"></div>
 	<script>
 		fetch('modal.html')
@@ -67,34 +96,34 @@
 			});
 	</script>
 
-    <!-- Подключение навигационной панели -->
-    <div id="navbar-container" style="margin-top: 95px;"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-    </script>
+	<!-- Подключение навигационной панели -->
+	<div id="navbar-container" style="margin-top: 95px;"></div>
+	<script>
+		fetch('navbar.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('navbar-container').innerHTML = data;
+			});
+	</script>
 
-    <!-- Header-->
-    <header class="py-3">
-        <div class="container px-lg-5">
-            <div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
-                <div class="m-3 m-lg-4">
-                    <h1 class="display-5 fw-bold">Добро пожаловать на сайт!</h1>
-                    <p class="fs-4">Добро пожаловать на сайт группы ИТ-12! Здесь вы сможете найти актуальную информацию
-                        о расписании занятий, лабораторных работах, учебных материалах и многом другом. Следите за
-                        обновлениями и будьте в курсе всех важных событий!</p>
-                </div>
-            </div>
-        </div>
-    </header>
+	<!-- Header-->
+	<header class="py-3">
+		<div class="container px-lg-5">
+			<div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
+				<div class="m-3 m-lg-4">
+					<h1 class="display-5 fw-bold">Добро пожаловать на сайт!</h1>
+					<p class="fs-4">Добро пожаловать на сайт группы ИТ-12! Здесь вы сможете найти актуальную информацию
+						о расписании занятий, лабораторных работах, учебных материалах и многом другом. Следите за
+						обновлениями и будьте в курсе всех важных событий!</p>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <section class="pt-4">
-        <div class="container px-lg-5">
-            <div class="row gx-lg-5">
-                <div class="col-lg-6 col-xxl-4 mb-5">
+	<section class="pt-4">
+		<div class="container px-lg-5">
+			<div class="row gx-lg-5">
+				<div class="col-lg-6 col-xxl-4 mb-5">
 					<a href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -103,87 +132,96 @@
 							</div>
 							<h2 class="fs-4 fw-bold text-dark">Расписание</h2>
 							<p class="mb-0 text-dark">Нажмите, чтобы узнать актуальное расписание пар. Здесь вы найдете
-								информацию о времени и месте проведения занятий, а также сможете следить за возможными изменениями в расписании.</p>
+								информацию о времени и месте проведения занятий, а также сможете следить за возможными
+								изменениями в расписании.</p>
 						</div>
 					</a>
 				</div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <a href="/sdo.html" class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-                                <i class="bi bi-card-checklist"></i>
-                            </div>
-                            <h2 class="fs-4 fw-bold text-dark">SDO</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список курсов, доступных в этом семестре. Вы сможете узнать подробности о каждом курсе и перейти к их содержимому.</p>
-                        </div>
-                    </a>
-                </div>
+				<div class="col-lg-6 col-xxl-4 mb-5">
+					<a href="/sdo.html"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
+								<i class="bi bi-card-checklist"></i>
+							</div>
+							<h2 class="fs-4 fw-bold text-dark">SDO</h2>
+							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список курсов, доступных в этом
+								семестре. Вы сможете узнать подробности о каждом курсе и перейти к их содержимому.</p>
+						</div>
+					</a>
+				</div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <a href="https://it.vstu.by/" class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-                                <i class="bi bi-card-heading"></i>
-                            </div>
-                            <h2 class="fs-4 fw-bold text-dark">Кафедра ИСиТ</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть сайт Кафедры ИСиТ УО ВГТУ. На сайте можно найти лабораторные работы, а также такие сервисы как JupyterHub и др.</p>
-                        </div>
-                    </a>
-                </div>
+				<div class="col-lg-6 col-xxl-4 mb-5">
+					<a href="https://it.vstu.by/"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
+								<i class="bi bi-card-heading"></i>
+							</div>
+							<h2 class="fs-4 fw-bold text-dark">Кафедра ИСиТ</h2>
+							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть сайт Кафедры ИСиТ УО ВГТУ. На сайте
+								можно найти лабораторные работы, а также такие сервисы как JupyterHub и др.</p>
+						</div>
+					</a>
+				</div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <a href="https://drive.google.com/drive/folders/1YxtTpRt6FeAzoD40pua5MoMyuAre40UO?usp=sharing"
-                        class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-                                <i class="bi bi-folder2"></i>
-                            </div>
-                            <h2 class="fs-4 fw-bold text-dark">Лабораторные работы</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть лабораторные работы, задания и методические материалы для текущего семестра.</p>
-                        </div>
-                    </a>
-                </div>
+				<div class="col-lg-6 col-xxl-4 mb-5">
+					<a href="https://drive.google.com/drive/folders/1YxtTpRt6FeAzoD40pua5MoMyuAre40UO?usp=sharing"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
+								<i class="bi bi-folder2"></i>
+							</div>
+							<h2 class="fs-4 fw-bold text-dark">Лабораторные работы</h2>
+							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть лабораторные работы, задания и
+								методические материалы для текущего семестра.</p>
+						</div>
+					</a>
+				</div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <a href="https://drive.google.com/drive/folders/1r7atjLi-jJ9aekOsyXLa6Jb19alOBAfV?usp=sharing"
-                        class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-                                <i class="bi bi-folder2"></i>
-                            </div>
-                            <h2 class="fs-4 fw-bold text-dark">Предметы</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть список предметов и материалы к ним, включая лекции, задания и дополнительные ресурсы.</p>
-                        </div>
-                    </a>
-                </div>
+				<div class="col-lg-6 col-xxl-4 mb-5">
+					<a href="https://drive.google.com/drive/folders/1r7atjLi-jJ9aekOsyXLa6Jb19alOBAfV?usp=sharing"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
+								<i class="bi bi-folder2"></i>
+							</div>
+							<h2 class="fs-4 fw-bold text-dark">Предметы</h2>
+							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть список предметов и материалы к ним,
+								включая лекции, задания и дополнительные ресурсы.</p>
+						</div>
+					</a>
+				</div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5">
-                    <a href="https://drive.google.com/drive/folders/1gSJtfueT46nT5D-ppCP6uyzYlROxYctD?usp=sharing"
-                        class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-                                <i class="bi bi-folder2"></i>
-                            </div>
-                            <h2 class="fs-4 fw-bold text-dark">Программы</h2>
-                            <p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список программ, доступных для установки. Вы сможете загрузить необходимые установочные файлы для их установки.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer-->
-    <footer class="py-3 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright by Vitaliy Andreev</p>
-            <p class="m-0 text-center text-white">vstu-it12.github.io 2024</p> 
+				<div class="col-lg-6 col-xxl-4 mb-5">
+					<a href="https://drive.google.com/drive/folders/1gSJtfueT46nT5D-ppCP6uyzYlROxYctD?usp=sharing"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
+								<i class="bi bi-folder2"></i>
+							</div>
+							<h2 class="fs-4 fw-bold text-dark">Программы</h2>
+							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список программ, доступных для
+								установки. Вы сможете загрузить необходимые установочные файлы для их установки.</p>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
-    </footer>
+	</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Footer-->
+	<footer class="py-3 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright by Vitaliy Andreev</p>
+			<p class="m-0 text-center text-white">vstu-it12.github.io 2024</p>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- NewYear -->
 	<script src="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js" defer></script>
 </body>
+
 </html>
