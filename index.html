@@ -14,6 +14,7 @@
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="css/styles.css" rel="stylesheet" />
 	<!-- NewYear -->
+	<link href="css/timer.css" rel="stylesheet" />
 	<style>
 		body {
 			background-image: url('assets/bg.jpg');
@@ -106,8 +107,25 @@
 			});
 	</script>
 
+	<!-- Подключение таймера -->
+	<div id="container-timer">
+		<div id="clou_xs">
+			<div id="clock">
+				<div id="countdownText"></div> <!-- Элемент для текста -->
+				<div id="time-container">
+					<span id="RemainsFullDays"></span>
+				</div>
+				<div id="time-details">
+					<span id="RemainsFullHours"></span>
+					<span id="RemainsMinutes"></span>
+					<span id="lastSec"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Header-->
-	<header class="py-3">
+	<header> <!--Было <header class="py-3"> -->
 		<div class="container px-lg-5">
 			<div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
 				<div class="m-3 m-lg-4">
@@ -120,7 +138,7 @@
 		</div>
 	</header>
 
-	<section class="pt-4">
+	<section class="py-5"> <!--Было <header class="pt-4"> -->
 		<div class="container px-lg-5">
 			<div class="row gx-lg-5">
 				<div class="col-lg-6 col-xxl-4 mb-5">
@@ -131,12 +149,13 @@
 								<i class="bi bi-browser-chrome"></i>
 							</div>
 							<h2 class="fs-4 fw-bold text-dark">VSTU.BY</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы посетить сайт учреждения образования «Витебский государственный технологический университет» (УО «ВГТУ»).</p>
+							<p class="mb-0 text-dark">Нажмите, чтобы посетить сайт учреждения образования «Витебский
+								государственный технологический университет» (УО «ВГТУ»).</p>
 						</div>
 					</a>
 				</div>
-				
-						<div class="col-lg-6 col-xxl-4 mb-5">
+
+				<div class="col-lg-6 col-xxl-4 mb-5">
 					<a href="https://student.vstu.by/"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -148,8 +167,8 @@
 						</div>
 					</a>
 				</div>
-				
-					<div class="col-lg-6 col-xxl-4 mb-5">
+
+				<div class="col-lg-6 col-xxl-4 mb-5">
 					<a href="https://schedule.vstu.by/"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -157,11 +176,12 @@
 								<i class="bi bi-calendar3"></i>
 							</div>
 							<h2 class="fs-4 fw-bold text-dark">Электронное расписание</h2>
-							<p class="mb-0 text-dark">Здесь вы найдете информацию о расписании занятий по группам, а также сможете просмотреть расписание преподавателей.</p>
+							<p class="mb-0 text-dark">Здесь вы найдете информацию о расписании занятий по группам, а
+								также сможете просмотреть расписание преподавателей.</p>
 						</div>
 					</a>
 				</div>
-				
+
 				<div class="col-lg-6 col-xxl-4 mb-5">
 					<a href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
@@ -260,7 +280,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- NewYear -->
-	<script src="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js" defer></script>
+	<script src="js/timer.js"></script>
+	<script src="js/ball.js" defer></script>
 </body>
 
 </html>

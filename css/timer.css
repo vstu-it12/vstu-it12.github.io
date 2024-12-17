@@ -1,0 +1,72 @@
+#container-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clou_xs {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+}
+
+#clock {
+    display: flex; /* Используем Flexbox для расположения элементов */
+    flex-direction: column; /* Располагаем текст и значения времени в колонку */
+    align-items: center; /* Центрируем текст по горизонтали */
+    justify-content: center; /* Центрируем текст по вертикали */
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+}
+
+#time-container {
+    display: flex; /* Используем Flexbox для расположения значений времени в одну строку */
+    justify-content: center; /* Центрируем значения времени по горизонтали */
+}
+
+#time-details {
+    display: flex; /* Используем Flexbox для расположения часов, минут и секунд в одну строку */
+    justify-content: center; /* Центрируем значения времени по горизонтали */
+}
+
+#RemainsFullDays {
+    font-size: 35px; /* Увеличиваем размер шрифта для дней */
+}
+
+#RemainsFullHours,
+#RemainsMinutes,
+#lastSec {
+    font-size: 24px; /* Установите размер шрифта для оставшихся значений */
+    color: white; /* Это сделает текст белым */
+    margin: 0 5px; /* Отступ между значениями времени */
+}
+
+#Rem {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Медиа-запросы для уменьшения текста на маленьких экранах */
+@media (max-width: 450px) {
+    #clock {
+        font-size: 23px; /* Уменьшаем размер шрифта для всего текста */
+    }
+
+    #RemainsFullDays {
+        font-size: 30px; /* Уменьшаем размер шрифта для дней */
+    }
+
+    #RemainsFullHours,
+    #RemainsMinutes,
+    #lastSec {
+        font-size: 21px; /* Уменьшаем размер шрифта для оставшихся значений */
+    }
+
+    #Rem {
+        font-size: 11px; /* Уменьшаем размер шрифта для дополнительного текста */
+    }
+}
