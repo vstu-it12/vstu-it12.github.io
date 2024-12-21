@@ -32,6 +32,6 @@ function showCountdownText() {
 
 // Задержка на 1 секунду перед запуском функции showCountdownText и fulltime
 window.onload = function() {
-    setTimeout(showCountdownText, 400); // Показываем текст через 1 секунду
-    setTimeout(fulltime, 400); // Запускаем таймер через 1 секунду
+    setTimeout(showCountdownText, 300); // Показываем текст
+    setTimeout(fulltime, 300); // Запускаем таймер
 };
