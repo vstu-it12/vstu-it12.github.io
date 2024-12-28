@@ -1,4 +1,4 @@
-       // Функция для очистки всех куки
+        // Функция для очистки всех куки
         function clearCookies() {
             const cookies = document.cookie.split("; ");
 
@@ -10,10 +10,5 @@
             console.log("Все куки очищены");
         }
 
-        // Проверка, выполнялся ли скрипт ранее
-        if (!localStorage.getItem("cookiesCleared")) {
-            clearCookies();
-            localStorage.setItem("cookiesCleared", "true");
-        } else {
-            console.log("Куки уже были очищены ранее");
-        }
+        // Всегда очищать куки при загрузке страницы
+        clearCookies();
