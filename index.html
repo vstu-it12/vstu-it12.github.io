@@ -42,6 +42,15 @@
 			/* Уровень прозрачности (0.0 - 1.0) */
 		}
 
+        .fireworks {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; /* Чтобы клики проходили сквозь контейнер */
+        }
+
 		/* Медиа-запрос для отключения scale на мобильных устройствах */
 		@media (max-width: 768px) {
 			.card-hover:hover {
@@ -55,6 +64,8 @@
 	<link href="js/snow.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
 	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+	<script src="js/fireworks.js"></script>
+
 <script>
   window.OneSignalDeferred = window.OneSignalDeferred || [];
   OneSignalDeferred.push(async function(OneSignal) {
@@ -66,6 +77,7 @@
 </head>
 
 <body>
+ 
 	<script src="js/Snow.min.js"></script>
 	<script>
 		new Snow();
@@ -146,6 +158,9 @@
 			</div>
 		</div>
 	</header>
+
+	<!-- Подключение фейерверка -->
+	<div class="fireworks"></div>
 
 	<section class="py-5"> <!--Было <header class="pt-4"> -->
 		<div class="container px-lg-5">
