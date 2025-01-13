@@ -13,55 +13,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <!-- NewYear -->
-	<style>
-		body {
-			background-image: url('assets/bg.jpg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
+    <style>
+        body {
+            padding-top: 56px;
+            /* Высота navbar*/
+            background-image: url('assets/bg7.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-		.transparent {
-			opacity: 0.8;
-			/* Уровень прозрачности (0.0 - 1.0) */
-			transition: opacity 0.3s;
-			/* Плавный переход при наведении */
-		}
+        .transparent {
+            opacity: 0.85;
+            /* Уровень прозрачности (0.0 - 1.0) */
+            transition: opacity 0.3s;
+            /* Плавный переход при наведении */
+        }
 
-		.card-hover {
-			transition: transform 0.3s ease;
-			opacity: 0.8;
-			/* Уровень прозрачности (0.0 - 1.0) */
-		}
+        .card-hover {
+            transition: transform 0.3s ease;
+            opacity: 0.85;
+            /* Уровень прозрачности (0.0 - 1.0) */
+        }
 
-		.card-hover:hover {
-			transform: scale(1.05);
-			opacity: 0.90;
-			/* Уровень прозрачности (0.0 - 1.0) */
-		}
+        .card-hover:hover {
+            transform: scale(1.05);
+            opacity: 0.90;
+            /* Уровень прозрачности (0.0 - 1.0) */
+        }
 
-		/* Медиа-запрос для отключения scale на мобильных устройствах */
-		@media (max-width: 768px) {
-			.card-hover:hover {
-				transform: scale(1);
-				/* Отключаем масштабирование для мобильных устройств */
-				opacity: 0.90;
-				/* Оставляем уровень прозрачности */
-			}
-		}
-	</style>
-    <link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
+        /* Медиа-запрос для отключения scale на мобильных устройствах */
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: scale(1);
+                /* Отключаем масштабирование для мобильных устройств */
+                opacity: 0.90;
+                /* Оставляем уровень прозрачности */
+            }
+        }
+    </style>
     <link href="js/snow.min.css" rel="stylesheet">
-		<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "c4539604-bb8f-45c0-b707-efe794b027d1",
-    });
-  });
-</script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {
+            await OneSignal.init({
+                appId: "c4539604-bb8f-45c0-b707-efe794b027d1",
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -70,57 +70,33 @@
         new Snow();
     </script>
 
- <!-- Подключение гирлянды -->
- <div id="girland-container"></div>
- <script>
-     function loadGirland() {
-         fetch('girland.html')
-             .then(response => {
-                 if (!response.ok) {
-                     throw new Error('Сеть не отвечает: ' + response.status);
-                 }
-                 return response.text();
-             })
-             .then(data => {
-                 document.getElementById('girland-container').innerHTML = data;
-                 const script = document.createElement('script');
-                 script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
-                 script.defer = true;
-                 document.body.appendChild(script);
-             })
-             .catch(error => {
-                 console.error('Ошибка при загрузке girland.html:', error);
-             });
-     }
-     loadGirland();
- </script>
+    <!-- Подключение navbar -->
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
 
-<!-- Подключение navbar -->
-<div id="navbar-container" style="margin-top: 95px;"></div>
-<script>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-        });
-</script>
-	
-<!-- Подключение модального окна -->
-<div id="modal-container"></div>
-<script>
-    fetch('modal.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('modal-container').innerHTML = data;
-        });
-</script>
+    <!-- Подключение модального окна -->
+    <div id="modal-container"></div>
+    <script>
+        fetch('modal.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modal-container').innerHTML = data;
+            });
+    </script>
 
     <!-- Header-->
-    <header class="py-3">
+    <header class="py-4">
         <div class="container px-lg-5">
             <div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
                 <div class="m-3 m-lg-4">
-                    <h1 class="display-5 fw-bold">Виртуальная образовательная среда Витебского государственного технологического университета</h1>
+                    <h1 class="display-5 fw-bold">Виртуальная образовательная среда Витебского государственного
+                        технологического университета</h1>
                     <p class="fs-4">Здесь вы можете просмотреть курсы по предметам.</p>
                 </div>
             </div>
@@ -128,14 +104,15 @@
     </header>
 
     <!-- Page Content-->
-    <section class="pt-4">
+    <section class="pt-3">
         <div class="container px-lg-5">
             <!-- Page Features-->
             <div class="row gx-lg-5">
                 <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=868"
                         class="card bg-light border-1 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"> <i class="bi bi-info-circle"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"> <i
+                                    class="bi bi-info-circle"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">ПСП</h2>
                             <p class="mb-0 text-dark">
@@ -145,8 +122,8 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=2274" 
-                    class="card bg-light border-1 h-100 text-decoration-none card-hover">
+                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=2274"
+                        class="card bg-light border-1 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i
                                     class="bi bi-info-circle"></i></div>
@@ -167,25 +144,26 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a
-                        href="https://sdo.vstu.by/course/view.php?id=2162"
+                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=2162"
                         class="card bg-light border-1 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i class="bi bi-folder2"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i
+                                    class="bi bi-folder2"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">СиТАиРИС</h2>
                             <p class="mb-0 text-dark">
-                            <p class="mb-0 text-dark">Средства и технологии анализа и разработки информационных систем</p>
+                            <p class="mb-0 text-dark">Средства и технологии анализа и разработки информационных систем
+                            </p>
                             </p>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-6 col-xxl-4 mb-5"> <a
-                        href="https://sdo.vstu.by/course/view.php?id=289"
+                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=289"
                         class="card bg-light border-1 h-100 text-decoration-none card-hover">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i class="bi bi-folder2"></i>
+                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i
+                                    class="bi bi-folder2"></i>
                             </div>
                             <h2 class="fs-4 fw-bold text-dark">ММПТИ</h2>
                             <p class="mb-0 text-dark">
@@ -194,17 +172,19 @@
                         </div>
                     </a>
                 </div>
-<div class="col-lg-6 col-xxl-4 mb-5"> <a
-        href="https://sdo.vstu.by/course/view.php?id=1670"
-        class="card bg-light border-1 h-100 text-decoration-none card-hover">
-        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i class="bi bi-folder2"></i>
-            </div>
-            <h2 class="fs-4 fw-bold text-dark">Теоретический раздел ФК</h2>
-            <p class="mb-0 text-dark">
-            <p class="mb-0 text-dark">Общетеоретический раздел по дисциплине физическая культура для 1 - 4 курсов факультетов</p>
-            </p>
-        </div>
+                
+                <div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://sdo.vstu.by/course/view.php?id=1670"
+                        class="card bg-light border-1 h-100 text-decoration-none card-hover">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"><i
+                                    class="bi bi-folder2"></i>
+                            </div>
+                            <h2 class="fs-4 fw-bold text-dark">Теоретический раздел ФК</h2>
+                            <p class="mb-0 text-dark">
+                            <p class="mb-0 text-dark">Общетеоретический раздел по дисциплине физическая культура для 1 -
+                                4 курсов факультетов</p>
+                            </p>
+                        </div>
                     </a>
                 </div>
 
@@ -222,8 +202,6 @@
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- NewYear -->
-    <script src="js/ball.js" defer></script>
-    <script src="js/scroll_nav.js"></script>
 </body>
+
 </html>

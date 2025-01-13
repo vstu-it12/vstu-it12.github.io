@@ -13,18 +13,18 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="css/styles.css" rel="stylesheet" />
-	<!-- NewYear -->
-	<link href="css/timer.css" rel="stylesheet" />
 	<style>
 		body {
-			background-image: url('assets/bg.jpg');
+			padding-top: 56px;
+			/* Высота navbar*/
+			background-image: url('assets/bg7.jpg');
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
 		}
 
 		.transparent {
-			opacity: 0.8;
+			opacity: 0.85;
 			/* Уровень прозрачности (0.0 - 1.0) */
 			transition: opacity 0.3s;
 			/* Плавный переход при наведении */
@@ -32,7 +32,7 @@
 
 		.card-hover {
 			transition: transform 0.3s ease;
-			opacity: 0.8;
+			opacity: 0.85;
 			/* Уровень прозрачности (0.0 - 1.0) */
 		}
 
@@ -41,15 +41,6 @@
 			opacity: 0.90;
 			/* Уровень прозрачности (0.0 - 1.0) */
 		}
-
-        .fireworks {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            pointer-events: none; /* Чтобы клики проходили сквозь контейнер */
-        }
 
 		/* Медиа-запрос для отключения scale на мобильных устройствах */
 		@media (max-width: 768px) {
@@ -62,64 +53,26 @@
 		}
 	</style>
 	<link href="js/snow.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
 	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-	<script src="js/fireworks.js"></script>
 
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "c4539604-bb8f-45c0-b707-efe794b027d1",
-    });
-  });
-</script>
+	<script>
+		window.OneSignalDeferred = window.OneSignalDeferred || [];
+		OneSignalDeferred.push(async function (OneSignal) {
+			await OneSignal.init({
+				appId: "c4539604-bb8f-45c0-b707-efe794b027d1",
+			});
+		});
+	</script>
 </head>
 
 <body>
- 
 	<script src="js/Snow.min.js"></script>
 	<script>
 		new Snow();
 	</script>
 
-	<!-- Подключение гирлянды -->
-	<div id="girland-container"></div>
-	<script>
-		function loadGirland() {
-			fetch('girland.html')
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Сеть не отвечает: ' + response.status);
-					}
-					return response.text();
-				})
-				.then(data => {
-					document.getElementById('girland-container').innerHTML = data;
-					const script = document.createElement('script');
-					script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
-					script.defer = true;
-					document.body.appendChild(script);
-				})
-				.catch(error => {
-					console.error('Ошибка при загрузке girland.html:', error);
-				});
-		}
-		loadGirland();
-	</script>
-
-	<!-- Подключение модального окна -->
-	<div id="modal-container" style="margin-top: 95px;"></div>
-	<script>
-		fetch('modal.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('modal-container').innerHTML = data;
-			});
-	</script>
-
-	<!-- Подключение навигационной панели -->
-	<div id="navbar-container" style="margin-top: 95px;"></div>
+	<!-- Подключение navbar -->
+	<div id="navbar-container"></div>
 	<script>
 		fetch('navbar.html')
 			.then(response => response.text())
@@ -128,25 +81,18 @@
 			});
 	</script>
 
-	<!-- Подключение таймера -->
-	<div id="container-timer">
-		<div id="clou_xs">
-			<div id="clock">
-				<div id="countdownText"></div> <!-- Элемент для текста -->
-				<div id="time-container">
-					<span id="RemainsFullDays"></span>
-				</div>
-				<div id="time-details">
-					<span id="RemainsFullHours"></span>
-					<span id="RemainsMinutes"></span>
-					<span id="lastSec"></span>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- Подключение модального окна -->
+	<div id="modal-container"></div>
+	<script>
+		fetch('modal.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('modal-container').innerHTML = data;
+			});
+	</script>
 
 	<!-- Header-->
-	<header> <!--Было <header class="py-3"> -->
+	<header class="py-4">
 		<div class="container px-lg-5">
 			<div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
 				<div class="m-3 m-lg-4">
@@ -159,28 +105,27 @@
 		</div>
 	</header>
 
-	<!-- Подключение фейерверка -->
-	<div class="fireworks"></div>
-
-	<section class="py-5"> <!--Было <header class="pt-4"> -->
+	<!-- Page Content-->
+	<section class="pt-3">
 		<div class="container px-lg-5">
+			<!-- Page Features-->
 			<div class="row gx-lg-5">
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://vstu.by"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://vstu.by"
+						class="card bg-light border-1 h-100 text-decoration-none card-hover">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-browser-chrome"></i>
+							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"> <i
+									class="bi bi-browser-chrome"></i>
 							</div>
 							<h2 class="fs-4 fw-bold text-dark">VSTU.BY</h2>
+							<p class="mb-0 text-dark">
 							<p class="mb-0 text-dark">Нажмите, чтобы посетить сайт учреждения образования «Витебский
 								государственный технологический университет» (УО «ВГТУ»).</p>
+							</p>
 						</div>
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://student.vstu.by/"
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://student.vstu.by/"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
 							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
@@ -192,8 +137,7 @@
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://schedule.vstu.by/"
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://schedule.vstu.by/"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
 							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
@@ -206,8 +150,8 @@
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a
+						href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
 							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
@@ -221,8 +165,7 @@
 					</a>
 				</div>
 
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="/sdo.html"
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="/sdo.html"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
 							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
@@ -234,9 +177,8 @@
 						</div>
 					</a>
 				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://it.vstu.by/"
+				
+				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://it.vstu.by/"
 						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
 						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
 							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
@@ -303,10 +245,6 @@
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- NewYear -->
-	<script src="js/timer.js"></script>
-	<script src="js/ball.js" defer></script>
-	<script src="js/scroll_nav.js"></script>
 </body>
 
 </html>

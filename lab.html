@@ -15,14 +15,16 @@
     <link href="css/styles.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url('assets/bg.jpg');
+            padding-top: 56px;
+            /* Высота navbar*/
+            background-image: url('assets/bg7.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         .transparent {
-            opacity: 0.8;
+            opacity: 0.85;
             transition: opacity 0.3s;
         }
 
@@ -33,7 +35,6 @@
 
         iframe {
             width: 100%;
-            /* Ширина по умолчанию для десктопов */
             height: 550px;
             border: 1px solid #b3b3b3;
             border-radius: 8px;
@@ -42,10 +43,8 @@
 
         .iframe-container {
             padding: 0 !important;
-            /* Убираем внутренние отступы */
         }
     </style>
-    <link rel="stylesheet" href="https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/style.css">
     <link href="js/snow.min.css" rel="stylesheet">
 </head>
 
@@ -55,33 +54,8 @@
         new Snow();
     </script>
 
-    <!-- Подключение гирлянды -->
-    <div id="girland-container"></div>
-    <script>
-        function loadGirland() {
-            fetch('girland.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Сеть не отвечает: ' + response.status);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('girland-container').innerHTML = data;
-                    const script = document.createElement('script');
-                    script.src = 'https://www.expertplus.ru/UserFiles/Image/content/new_year/yandex-balls/script.js';
-                    script.defer = true;
-                    document.body.appendChild(script);
-                })
-                .catch(error => {
-                    console.error('Ошибка при загрузке girland.html:', error);
-                });
-        }
-        loadGirland();
-    </script>
-
     <!-- Подключение navbar -->
-    <div id="navbar-container" style="margin-top: 95px;"></div>
+    <div id="navbar-container"></div>
     <script>
         fetch('navbar.html')
             .then(response => response.text())
@@ -101,7 +75,7 @@
     </script>
 
     <!-- Header -->
-    <header class="py-3">
+    <header class="py-4">
         <div class="container px-lg-5">
             <div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
                 <div class="m-3 m-lg-4">
@@ -137,9 +111,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- NewYear -->
-    <script src="js/ball.js" defer></script>
-    <script src="js/scroll_nav.js"></script>
 </body>
 
 </html>
