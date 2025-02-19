@@ -1,266 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
-	<title>Cайт группы Ит-12</title>
-	<!-- Favicon-->
-	<link rel="icon" type="image/x-icon" href="assets/icon.ico" />
-	<!-- Bootstrap icons-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-	<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="css/styles.css" rel="stylesheet" />
-	<style>
-		body {
-			padding-top: 56px;
-			/* Высота navbar*/
-			background-image: url('assets/bg7.jpg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-
-		.transparent {
-			opacity: 0.85;
-			/* Уровень прозрачности (0.0 - 1.0) */
-			transition: opacity 0.3s;
-			/* Плавный переход при наведении */
-		}
-
-		.card-hover {
-			transition: transform 0.3s ease;
-			opacity: 0.85;
-			/* Уровень прозрачности (0.0 - 1.0) */
-		}
-
-		.card-hover:hover {
-			transform: scale(1.05);
-			opacity: 0.90;
-			/* Уровень прозрачности (0.0 - 1.0) */
-		}
-
-		/* Медиа-запрос для отключения scale на мобильных устройствах */
-		@media (max-width: 768px) {
-			.card-hover:hover {
-				transform: scale(1);
-				/* Отключаем масштабирование для мобильных устройств */
-				opacity: 0.90;
-				/* Оставляем уровень прозрачности */
-			}
-		}
-	</style>
-	<link href="js/snow.min.css" rel="stylesheet">
-	<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-
-	<script>
-		window.OneSignalDeferred = window.OneSignalDeferred || [];
-		OneSignalDeferred.push(async function (OneSignal) {
-			await OneSignal.init({
-				appId: "c4539604-bb8f-45c0-b707-efe794b027d1",
-			});
-		});
-	</script>
-
-	<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(99603932, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/99603932" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт переехал</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .timer {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333333;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let countdown = 10;
+            const timerElement = document.getElementById('timer');
+            const interval = setInterval(() => {
+                countdown--;
+                timerElement.textContent = countdown;
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    window.location.href = 'http://it12.my-board.org';
+                }
+            }, 1000);
+        });
+    </script>
 </head>
-
 <body>
-	<script src="js/Snow.min.js"></script>
-	<script>
-		new Snow();
-	</script>
-
-	<!-- Подключение navbar -->
-	<div id="navbar-container"></div>
-	<script>
-		fetch('navbar.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('navbar-container').innerHTML = data;
-			});
-	</script>
-
-	<!-- Подключение модального окна -->
-	<div id="modal-container"></div>
-	<script>
-		fetch('modal.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('modal-container').innerHTML = data;
-			});
-	</script>
-
-	<!-- Header-->
-	<header class="py-4">
-		<div class="container px-lg-5">
-			<div class="p-3 p-lg-4 bg-light rounded-3 text-center transparent">
-				<div class="m-3 m-lg-4">
-					<h1 class="display-5 fw-bold">Добро пожаловать на сайт!</h1>
-					<p class="fs-4">Добро пожаловать на сайт группы ИТ-12! Здесь вы сможете найти актуальную информацию
-						о расписании занятий, лабораторных работах, учебных материалах и многом другом. Следите за
-						обновлениями и будьте в курсе всех важных событий!</p>
-				</div>
-			</div>
-		</div>
-	</header>
-
-	<!-- Page Content-->
-	<section class="pt-3">
-		<div class="container px-lg-5">
-			<!-- Page Features-->
-			<div class="row gx-lg-5">
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://vstu.by"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4"> <i
-									class="bi bi-browser-chrome"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">VSTU.BY</h2>
-							<p class="mb-0 text-dark">
-							<p class="mb-0 text-dark">Нажмите, чтобы посетить сайт учреждения образования «Витебский
-								государственный технологический университет» (УО «ВГТУ»).</p>
-							</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://student.vstu.by/"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-browser-chrome"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Личный кабинет студента</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы посетить Личный кабинет студента УО "ВГТУ".</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://schedule.vstu.by/"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-calendar3"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Электронное расписание</h2>
-							<p class="mb-0 text-dark">Здесь вы найдете информацию о расписании занятий по группам, а
-								также сможете просмотреть расписание преподавателей.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a
-						href="https://vstu.by/ftpgetfile/stud/schedule/inform-tech/3_36-12-6-35.pdf"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-calendar3"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Расписание</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы узнать актуальное расписание пар. Здесь вы найдете
-								информацию о времени и месте проведения занятий, а также сможете следить за возможными
-								изменениями в расписании.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="/sdo.html"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-card-checklist"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">SDO</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список курсов, доступных в этом
-								семестре. Вы сможете узнать подробности о каждом курсе и перейти к их содержимому.</p>
-						</div>
-					</a>
-				</div>
-				
-				<div class="col-lg-6 col-xxl-4 mb-5"> <a href="https://it.vstu.by/"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-card-heading"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Кафедра ИСиТ</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть сайт Кафедры ИСиТ УО ВГТУ. На сайте
-								можно найти лабораторные работы, а также такие сервисы как JupyterHub и др.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="/lab.html"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-folder2"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Лабораторные работы</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть лабораторные работы, задания и
-								методические материалы для текущего семестра.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://drive.google.com/drive/folders/1r7atjLi-jJ9aekOsyXLa6Jb19alOBAfV?usp=sharing"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-folder2"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Предметы</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть список предметов и материалы к ним,
-								включая лекции, задания и дополнительные ресурсы.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-lg-6 col-xxl-4 mb-5">
-					<a href="https://drive.google.com/drive/folders/1gSJtfueT46nT5D-ppCP6uyzYlROxYctD?usp=sharing"
-						class="card bg-light border-1 h-100 text-decoration-none card-hover transparent-card">
-						<div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-							<div class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4">
-								<i class="bi bi-folder2"></i>
-							</div>
-							<h2 class="fs-4 fw-bold text-dark">Программы</h2>
-							<p class="mb-0 text-dark">Нажмите, чтобы просмотреть полный список программ, доступных для
-								установки. Вы сможете загрузить необходимые установочные файлы для их установки.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Footer-->
-	<footer class="py-3 bg-dark">
-		<div class="container">
-			<p class="m-0 text-center text-white">Copyright by Vitaliy Andreev</p>
-			<p class="m-0 text-center text-white">vstu-it12.github.io 2025</p>
-		</div>
-	</footer>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+        <h1>Сайт переехал</h1>
+        <p>Сайт переехал по новому адресу. Вы будете автоматически перенаправлены через <span id="timer">10</span> секунд.</p>
+        <a href="http://it12.my-board.org" class="button">Перейти сейчас</a>
+    </div>
 </body>
-
 </html>
