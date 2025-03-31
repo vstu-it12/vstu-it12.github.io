@@ -4,45 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт переехал</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #ffffff;
-            background-color: #007BFF;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .timer {
-            font-size: 18px;
-            margin-top: 20px;
-            color: #333333;
-        }
-    </style>
-    <script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 max-w-md w-full text-center">
+            <!-- Заголовок -->
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Сайт переехал
+            </h1>
+
+            <!-- Основной текст -->
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Наш сайт переехал на новый адрес. Пожалуйста, нажмите на кнопку ниже, чтобы перейти на новый сайт.
+            </p>
+			
+			<p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
+                Вы будете автоматически перенаправлены через <span id="timer">10</span> секунд.
+            </p>
+
+            <!-- Кнопка перехода -->
+            <a 
+                href="http://andreev.my-board.org" 
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+            >
+                Перейти на новый сайт
+            </a>
+        </div>
+    </div>
+</body>
+<script>
         document.addEventListener('DOMContentLoaded', (event) => {
             let countdown = 10;
             const timerElement = document.getElementById('timer');
@@ -56,12 +47,4 @@
             }, 1000);
         });
     </script>
-</head>
-<body>
-    <div class="container">
-        <h1>Сайт переехал</h1>
-        <p>Сайт переехал по новому адресу. Вы будете автоматически перенаправлены через <span id="timer">10</span> секунд.</p>
-        <a href="http://andreev.my-board.org" class="button">Перейти сейчас</a>
-    </div>
-</body>
 </html>
